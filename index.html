@@ -230,4 +230,560 @@
       position: absolute;
       bottom: 12px;
       left: 12px;
-      background: rgba(3, 27, 5
+      background: rgba(3, 27, 51, 0.9);
+      color: var(--white);
+      font-size: 0.78rem;
+      padding: 8px 12px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+    }
+
+    .hero-badge-top {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      background: linear-gradient(135deg, #34e49a, #0bd18a);
+      color: #02170b;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.5);
+    }
+
+    @keyframes fadeDown {
+      from { opacity:0; transform: translateY(-18px);}
+      to { opacity:1; transform: translateY(0);}
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg);}
+      50% { transform: translateY(-10px) rotate(-0.3deg);}
+      100% { transform: translateY(0) rotate(0deg);}
+    }
+
+    /* SECTIONS GÉNÉRALES */
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      color: #576779;
+      margin-bottom: 26px;
+    }
+
+    /* A PROPOS TZ IMMO */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 20px;
+    }
+
+    .about-card {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+      border: 1px solid rgba(11,95,167,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at top left, rgba(246,185,59,0.18), transparent 55%);
+      opacity:0;
+      transition:opacity .25s ease;
+    }
+    .about-card:hover::before { opacity:1; }
+
+    .about-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--gold));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--white);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .about-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+    }
+
+    .about-card p {
+      margin:0;
+      font-size:0.9rem;
+      color:#4f5e70;
+      line-height:1.5;
+    }
+
+    /* LISTES DE BIENS */
+
+    .listing-grid {
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:18px;
+    }
+
+    .listing-card {
+      background: var(--white);
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .listing-card img {
+      width:100%;
+      height:180px;
+      object-fit:cover;
+    }
+
+    .listing-body {
+      padding:14px 14px 16px;
+      font-size:0.9rem;
+    }
+
+    .listing-label {
+      font-size:0.72rem;
+      color:#6d7c8d;
+      text-transform:uppercase;
+      letter-spacing:.07em;
+      margin-bottom:4px;
+    }
+
+    .listing-title {
+      font-weight:600;
+      margin-bottom:4px;
+    }
+
+    .listing-meta {
+      font-size:0.8rem;
+      color:#7b8a9a;
+      margin-bottom:8px;
+    }
+
+    .listing-footer {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      font-size:0.85rem;
+      margin-top:4px;
+    }
+
+    .price {
+      font-weight:700;
+      color:var(--blue-dark);
+    }
+
+    .btn-small {
+      border-radius:999px;
+      border:none;
+      padding:7px 12px;
+      font-size:0.78rem;
+      cursor:pointer;
+      background:#eef4ff;
+      color:var(--blue-dark);
+      transition:background .2s ease, transform .2s ease;
+    }
+
+    .btn-small:hover {
+      background:#d7e4ff;
+      transform:translateY(-1px);
+    }
+
+    /* MANAGER & CONTACT */
+
+    .manager-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 20px 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      display:grid;
+      grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr);
+      gap:20px;
+      align-items:center;
+    }
+
+    .manager-photo {
+      border-radius: 18px;
+      overflow:hidden;
+      box-shadow: 0 12px 26px rgba(0,0,0,0.12);
+    }
+
+    .manager-photo img {
+      width:100%;
+      height:230px;
+      object-fit:cover;
+    }
+
+    .manager-info h3 {
+      margin:0 0 6px;
+    }
+
+    .manager-role {
+      font-size:0.85rem;
+      color:#6a7a8b;
+      margin-bottom:10px;
+    }
+
+    .manager-info p {
+      font-size:0.9rem;
+      color:#4a5c6e;
+      margin-bottom:8px;
+    }
+
+    .contact-details {
+      font-size:0.9rem;
+    }
+
+    .contact-details div {
+      margin-bottom:4px;
+    }
+
+    /* GOOGLE MAPS */
+
+    .map-card {
+      margin-top:20px;
+      background: var(--white);
+      border-radius: 18px;
+      padding:16px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+    }
+
+    .map-card iframe {
+      width:100%;
+      height:260px;
+      border:0;
+      border-radius:14px;
+    }
+
+    /* SECTION DATA / INVEST */
+
+    .data-card {
+      margin-top:20px;
+      background: var(--white);
+      border-radius: 18px;
+      padding:16px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      display:grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr);
+      gap:14px;
+      align-items:center;
+    }
+
+    .data-card img {
+      width:100%;
+      border-radius:14px;
+      object-fit:contain;
+      background:#04192a;
+    }
+
+    .data-text {
+      font-size:0.9rem;
+      color:#4b5a6c;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background:#031728;
+      color:#d4e1f0;
+      text-align:center;
+      padding:18px 16px 22px;
+      font-size:0.8rem;
+      margin-top:50px;
+    }
+
+    footer a {
+      color:#f6b93b;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width:960px) {
+      .hero-inner {
+        grid-template-columns:1fr;
+      }
+      .about-grid,
+      .listing-grid {
+        grid-template-columns:1fr 1fr;
+      }
+      .manager-card,
+      .data-card {
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:700px) {
+      .nav-links { display:none; }
+      .section { padding:48px 16px; }
+      .hero { padding:70px 16px 50px; }
+      .about-grid,
+      .listing-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">TZ <span>IMMO</span></div>
+    <nav class="nav-links">
+      <a href="#about">À propos</a>
+      <a href="#biens">Biens</a>
+      <a href="#manager">Manager</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="btn-nav" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+      Demander un rendez-vous
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1 class="hero-title">Immobilier &amp; location en Normandie avec TZ IMMO.</h1>
+      <p class="hero-subtitle">
+        TZ IMMO accompagne propriétaires et locataires pour la mise en location,
+        la gestion et l’investissement immobilier en Normandie, avec un suivi personnalisé.
+      </p>
+      <div class="hero-badges">
+        <div class="badge">Lessors of Real Estate</div>
+        <div class="badge">Real Estate &amp; Rental</div>
+        <div class="badge">Normandie • France</div>
+      </div>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="document.getElementById('biens').scrollIntoView({behavior:'smooth'});">
+          🔎 Voir les biens
+        </button>
+        <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+          📞 Contacter l’agence
+        </button>
+      </div>
+      <div class="hero-contact">
+        <div><strong>Téléphone :</strong> <a href="tel:+33752936001" style="color:#fff;">+33 7 52 93 60 01</a></div>
+        <div><strong>Email :</strong> <a href="mailto:isabellehouchard@tzimmo.shop" style="color:#fff;">isabellehouchard@tzimmo.shop</a></div>
+        <div><strong>Adresse :</strong> CHEMIN DES MONTS, 14520 Commes, Normandie, France</div>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="hero-badge-top">Expertise locale</div>
+      <img class="hero-img"
+           src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1mVoKJ.img?w=2120&h=1414&m=4&q=79"
+           alt="Ville et bord de mer en Normandie" />
+      <div class="hero-tag">Normandie • Investissement &amp; location</div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="about" class="section">
+  <h2 class="section-title">Pourquoi choisir TZ IMMO&nbsp;?</h2>
+  <p class="section-subtitle">
+    Une structure à taille humaine, proche de ses clients, pour sécuriser vos projets d’achat, de location ou d’investissement.
+  </p>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="about-icon">🏠</div>
+      <h3>Mise en location &amp; gestion</h3>
+      <p>
+        Analyse du marché, estimation du loyer, sélection des dossiers, rédaction des baux et suivi de la relation locataire.
+        TZ IMMO simplifie la vie des propriétaires bailleurs.
+      </p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">📈</div>
+      <h3>Investissement immobilier</h3>
+      <p>
+        Accompagnement pour constituer ou développer votre patrimoine immobilier&nbsp;: sélection de biens, projection de rentabilité,
+        et stratégie à moyen/long terme.
+      </p>
+    </div>
+    <div class="about-card">
+      <div class="about-icon">🤝</div>
+      <h3>Accompagnement sur mesure</h3>
+      <p>
+        Un interlocuteur unique pour suivre votre projet de A à Z, avec une connaissance fine du secteur de Commes et de la Normandie.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- BIENS / EXEMPLES -->
+<section id="biens" class="section">
+  <h2 class="section-title">Exemples de biens et projets</h2>
+  <p class="section-subtitle">
+    Quelques illustrations de typologies de biens que TZ IMMO peut accompagner&nbsp;: mise en location, gestion ou investissement.
+  </p>
+
+  <div class="listing-grid">
+    <div class="listing-card">
+      <img src="https://t4.ftcdn.net/jpg/02/96/51/73/360_F_296517318_cdt4l4BZ3WljVw9Q7OVs1rLWZiQmCmUe.jpg" alt="Immeuble locatif" />
+      <div class="listing-body">
+        <div class="listing-label">Investissement locatif</div>
+        <div class="listing-title">Immeuble de rapport en centre-bourg</div>
+        <div class="listing-meta">Appartements loués, optimisation des loyers, suivi des travaux.</div>
+        <div class="listing-footer">
+          <span class="price">Étude de rentabilité sur mesure</span>
+          <button class="btn-small" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+            En savoir plus
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card">
+      <img src="https://miro.medium.com/v2/resize:fit:1200/1*juUs4Zs6Q6XLUupEdFiFHw.png" alt="Graphique investissement" />
+      <div class="listing-body">
+        <div class="listing-label">Gestion de patrimoine</div>
+        <div class="listing-title">Suivi de votre portefeuille immobilier</div>
+        <div class="listing-meta">Tableaux de bord, évolution des loyers, projections et arbitrages.</div>
+        <div class="listing-footer">
+          <span class="price">Vision long terme</span>
+          <button class="btn-small" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+            Prendre RDV
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="listing-card">
+      <img src="https://t4.ftcdn.net/jpg/02/96/51/73/360_F_296517318_cdt4l4BZ3WljVw9Q7OVs1rLWZiQmCmUe.jpg" alt="Maison à louer" />
+      <div class="listing-body">
+        <div class="listing-label">Location résidence principale</div>
+        <div class="listing-title">Maison ou appartement à louer</div>
+        <div class="listing-meta">Sélection rigoureuse des dossiers, cadre légal sécurisé pour toutes les parties.</div>
+        <div class="listing-footer">
+          <span class="price">Accompagnement complet</span>
+          <button class="btn-small" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+            Être recontacté
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANAGER -->
+<section id="manager" class="section">
+  <h2 class="section-title">Votre interlocutrice dédiée</h2>
+  <p class="section-subtitle">
+    TZ IMMO est dirigée par une professionnelle de l’immobilier impliquée et disponible pour ses clients.
+  </p>
+
+  <div class="manager-card">
+    <div class="manager-photo">
+      <img src="https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1mVoKJ.img?w=2120&h=1414&m=4&q=79"
+           alt="Illustration TZ IMMO" />
+    </div>
+    <div class="manager-info">
+      <h3>Isabelle HOUCHARD</h3>
+      <div class="manager-role">Manager – TZ IMMO</div>
+      <p>
+        Isabelle Houchard accompagne personnellement vos projets&nbsp;: estimation, location, gestion,
+        arbitrage et suivi d’investissement. Un contact direct, transparent et réactif.
+      </p>
+      <div class="contact-details">
+        <div><strong>Tél :</strong> <a href="tel:+33752936001">+33 7 52 93 60 01</a></div>
+        <div><strong>Email :</strong> <a href="mailto:isabellehouchard@tzimmo.shop">isabellehouchard@tzimmo.shop</a></div>
+        <div><strong>Secteur :</strong> Commes &amp; Normandie • France</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="data-card">
+    <img src="https://miro.medium.com/v2/resize:fit:1200/1*juUs4Zs6Q6XLUupEdFiFHw.png" alt="Suivi investissement" />
+    <div class="data-text">
+      <strong>Suivi et vision sur vos biens</strong><br><br>
+      Analyse des flux locatifs, taux d’occupation, charges, coûts de travaux et perspectives d’évolution.
+      L’objectif&nbsp;: vous donner les clés pour décider sereinement de vos investissements.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT & GOOGLE MAPS -->
+<section id="contact" class="section">
+  <h2 class="section-title">Contact &amp; localisation</h2>
+  <p class="section-subtitle">
+    Vous avez un projet de location, de gestion ou d’investissement&nbsp;? Parlons-en autour de votre situation.
+  </p>
+
+  <div class="map-card">
+    <iframe
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=CHEMIN+DES+MONTS+14520+COMMES+FRANCE&output=embed">
+    </iframe>
+  </div>
+
+  <div style="margin-top:18px; text-align:center; font-size:0.95rem;">
+    <p><strong>Adresse :</strong> CHEMIN DES MONTS, 14520 Commes, Normandie, France</p>
+    <p>
+      <strong>Tél :</strong> <a href="tel:+33752936001">+33 7 52 93 60 01</a> •
+      <strong>Email :</strong> <a href="mailto:isabellehouchard@tzimmo.shop">isabellehouchard@tzimmo.shop</a>
+    </p>
+    <button class="btn-primary" onclick="window.location.href='mailto:isabellehouchard@tzimmo.shop?subject=Contact%20TZ%20IMMO';">
+      ✉️ Envoyer un email
+    </button>
+  </div>
+</section>
+
+<footer>
+  <div>&copy; <span id="year"></span> TZ IMMO – Immobilier &amp; location • Normandie, France.</div>
+  <div>Lessors of Real Estate • Real Estate and Rental and Leasing.</div>
+</footer>
+
+<script>
+  // année dynamique
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // animation sections au scroll
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+</body>
+</html>
